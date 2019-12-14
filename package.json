@@ -4,12 +4,20 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsc -w",
+    "build": "tsc",
+    "test.unit": "mocha -r ts-node/register",
+    "bump.patch": "release-it patch --ci",
+    "bump.minor": "release-it minor --ci",
+    "bump.major": "release-it major --ci",
+    "release": "npm publish"
   },
   "keywords": [
     "init",
-    "npm"
+    "npm",
+    "lib"
   ],
+  "repository": "git@github.com:French-Exception/create-npm-lib.git",
   "author": "Stéphane ERARD <serard06@gmail.com>",
   "license": "ISC",
   "devDependencies": {
@@ -19,6 +27,7 @@
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
     "nodemon": "^2.0.2",
+    "release-it": "^12.4.3",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3"
   },
@@ -33,5 +42,8 @@
   },
   "directories": {
     "test": "tests"
-  }
+  },
+  "files": [
+    "src/*.js"
+  ]
 }
