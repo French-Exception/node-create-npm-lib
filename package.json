@@ -4,9 +4,11 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "dev": "tsc -w",
+    "configure": "frenchex-config init",
+    "watch": "tsc -w",
     "build": "tsc",
-    "test.unit": "mocha -r ts-node/register",
+    "test.unit": "mocha -r ts-node/register -r source-map-support/register test/**/*.ts",
+    "cover": "nyc mocha -r ts-node/register -r source-map-support/register test/**/*.ts",
     "bump.patch": "release-it patch --ci",
     "bump.minor": "release-it minor --ci",
     "bump.major": "release-it major --ci",
